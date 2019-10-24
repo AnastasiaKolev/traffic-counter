@@ -3,23 +3,41 @@
 Приложение для подсчета траффика с ip адреса по выбору при вводе номера канала NIF [_i_]
 
 Пример список адресов:
+
 NIF[0]: en0
+      
       : link layer address: *
+      
       : address: /*
+      
       : address: /*
+
 NIF[1]: p2p0
+      
       : link layer address: *
+
 NIF[2]: awdl0
+      
       : link layer address: *
+      
       : address: /*
+
 NIF[3]: utun0
+      
       : address: /*
+
 NIF[4]: lo0
+
       : address: /127.0.0.1
+      
       : address: /0:0:0:0:0:0:0:1
+      
       : address: /fe80:0:0:0:0:0:0:1
+
 NIF[5]: gif0
+
 NIF[6]: stf0
+
 NIF[7]: XHC20
 
 Запуск приложения: 
