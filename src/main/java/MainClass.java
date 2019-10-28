@@ -57,7 +57,7 @@ public class MainClass {
 
                 long time = System.currentTimeMillis();
                 // захват трафика за 5 минут
-                if (time > startTime[0] + 1 * 60 * 1000) {
+                if (time > startTime[0] + 5 * 60 * 1000) {
                     if (totalPacketLength < minPacketLength) {
                         // send alert to Kafka
                         // sendAlert();
@@ -71,9 +71,15 @@ public class MainClass {
                         System.out.println( "Alert to Kafka: total.length() is higher than max value " + totalPacketLength );
                     }
                     // обнуление счетчиков
-                    System.out.println( "A minute has passed: \tTraffic for 1 min: " + totalPacketLength );
+                    System.out.println( "5 minutes have passed \tTraffic is within the bounds: " + totalPacketLength );
                     totalPacketLength = 0;
                     startTime[0] = System.currentTimeMillis();
+                }
+
+                // обновление пороговых значений каждые 20 минут
+                if (time > startTime[0] + 20 * 60 * 1000) {
+                    maxPacketLength += 500000;
+                    minPacketLength += 10000;
                 }
 
                 System.out.println( "Current traffic: " + totalPacketLength );

@@ -5,11 +5,9 @@
 Пример списка доступных адресов захвата траффика:
 
 NIF[0]: en0
-      
+
       : link layer address: *
-      
       : address: /*
-      
       : address: /*
 
 NIF[1]: p2p0
@@ -19,7 +17,6 @@ NIF[1]: p2p0
 NIF[2]: awdl0
       
       : link layer address: *
-      
       : address: /*
 
 NIF[3]: utun0
@@ -29,9 +26,7 @@ NIF[3]: utun0
 NIF[4]: lo0
 
       : address: /127.0.0.1
-      
       : address: /0:0:0:0:0:0:0:1
-      
       : address: /fe80:0:0:0:0:0:0:1
 
 NIF[5]: gif0
@@ -40,8 +35,13 @@ NIF[6]: stf0
 
 NIF[7]: XHC20
 
+Компиляция и создание jar:
+    
+    _name_:traffic-counter _user-name_$ mvn clean compile assembly:single
+
 Запуск приложения: 
-1. _name_:target _user-name_$ sudo java -jar traffic-counter.jar
-2. Далее ввод пароля
-3. И выбор канала, например NIF [_0_], вводим 0
-4. Выход из приложения Ctrl+C
+    
+    1. _name_:target _user-name_$ sudo java -jar traffic-counter.jar
+    2. Далее ввод пароля
+    3. И выбор канала, например для  NIF [_0_], вводим 0
+    4. Выход из приложения Ctrl+C
